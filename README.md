@@ -56,3 +56,12 @@ This tool requires a local development environment to function properly. As I do
 
 ### Adding New Themes
 Themes are defined in `src/stores/savedThemes.ts`. Each theme includes:
+
+### Preview
+
+Preview on a dev server. (Zoomed out to fit everything within the picture)
+https://imgur.com/a/hwWmBCc
+
+What a Downloaded thumbnail looks like 
+https://imgur.com/a/3FgSZUb
+
