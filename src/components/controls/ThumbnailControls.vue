@@ -102,6 +102,13 @@
         accept="image/*"
         @fileSelected="updateMainImage"
       />
+      <button
+        v-if="configStore.imageUrl"
+        @click="removeMainImage"
+        class="mt-2 text-red-500 hover:text-red-600 text-xs flex items-center"
+      >
+        <i class="fas fa-times mr-1"></i>Remove image
+      </button>
     </div>
 
     <div class="control-group flex flex-col">
@@ -114,6 +121,13 @@
         accept="image/*"
         @fileSelected="updateBackgroundImage"
       />
+      <button
+        v-if="configStore.backgroundImage"
+        @click="removeBackgroundImage"
+        class="mt-2 text-red-500 hover:text-red-600 text-xs flex items-center"
+      >
+        <i class="fas fa-times mr-1"></i>Remove background
+      </button>
     </div>
 
 
@@ -260,6 +274,19 @@ function updateMainImage(dataUrl: string) {
 
 function updateBackgroundImage(dataUrl: string) {
   configStore.backgroundImage = dataUrl
+}
+
+function removeHandleLogo() {
+  configStore.handleLogo = ''
+  configStore.useHandleLogo = false
+}
+
+function removeMainImage() {
+  configStore.imageUrl = ''
+}
+
+function removeBackgroundImage() {
+  configStore.backgroundImage = ''
 }
 </script>
 
