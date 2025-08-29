@@ -17,8 +17,8 @@
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
-        <div class="right-panel-header flex flex-col items-center gap-3 mb-6">
-          <div class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px] text-center">{{ configStore.rightHeaderText }}</div>
+        <div class="right-panel-header flex items-center gap-3 mb-6 justify-center">
+          <span class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px]">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.showHeader && configStore.headerLinkText" class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
             <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
           </div>
