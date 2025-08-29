@@ -36,8 +36,8 @@
     
     <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full relative">
       <div id="text-only-main-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[45%] w-full text-center">
-        <div id="text-only-header" class="flex flex-col items-center gap-3 mb-4">
-          <div class="text-[28px] font-bold tracking-[2px] text-[var(--thumbnail-secondary-text-color)]">{{ configStore.rightHeaderText }}</div>
+        <div id="text-only-header" class="flex items-center gap-3 mb-4 justify-center">
+          <span class="text-[28px] font-bold tracking-[2px] text-[var(--thumbnail-secondary-text-color)]">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.showHeader && configStore.headerLinkText" class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
             <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
           </div>
