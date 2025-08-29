@@ -11,9 +11,9 @@
           <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
           <span v-else class="text-[var(--thumbnail-secondary-text-color)] text-2xl">{{ configStore.handleText }}</span>
         </div>
-        <div class="title-container">
-          <h1 class="title text-[60px] font-extrabold leading-[0.8] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-          <h1 class="reflection text-[60px] font-extrabold leading-[0.8] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] -mt-[48px] opacity-30">{{ configStore.titleText }}</h1>
+        <div class="title-container relative">
+          <h1 class="title text-[60px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
+          <h1 class="reflection text-[60px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] absolute top-full left-0 opacity-30">{{ configStore.titleText }}</h1>
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
@@ -42,8 +42,10 @@
             <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
           </div>
         </div>
-        <h1 id="text-only-title" class="text-[73px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-        <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] -mt-[146px] opacity-30">{{ configStore.titleText }}</h1>
+        <div class="relative inline-block">
+          <h1 id="text-only-title" class="text-[73px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
+          <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-none m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] absolute top-full left-0 w-full opacity-30">{{ configStore.titleText }}</h1>
+        </div>
       </div>
       <div id="text-only-footer" class="absolute bottom-[30px] left-1/2 transform -translate-x-1/2">
         <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
