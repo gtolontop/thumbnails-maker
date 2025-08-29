@@ -46,7 +46,7 @@
     
     <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full relative">
       <div id="text-only-main-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[45%] w-full text-center">
-        <div id="text-only-header" class="mb-6 flex items-center justify-center gap-7">
+        <div id="text-only-header" class="mb-6 flex items-center justify-center gap-3">
           <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
             <div class="px-7 py-2 rounded-lg" style="background-color: #3a3f4d;">
