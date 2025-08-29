@@ -70,19 +70,6 @@
       />
     </div>
 
-    <div class="control-group flex flex-col">
-      <label for="header-text" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
-        <i class="fas fa-bullhorn mr-2"></i>Header Text
-      </label>
-      <input
-        id="header-text"
-        type="text"
-        :value="configStore.headerText"
-        @input="updateHeaderText"
-        class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
-        placeholder="Enter header text"
-      />
-    </div>
 
     <div class="control-group flex flex-col">
       <label for="header-link-text" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
