@@ -231,10 +231,6 @@ function updateHeaderLinkText(event: Event) {
   configStore.headerLinkText = target.value
 }
 
-function updateShowHeader(event: Event) {
-  const target = event.target as HTMLInputElement
-  configStore.showHeader = target.checked
-}
 
 function updateSelectedTheme(themeKey: string) {
   emit('update:selectedTheme', themeKey)
