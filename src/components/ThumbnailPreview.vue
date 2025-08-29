@@ -46,7 +46,7 @@
         <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-[1.1] text-[var(--thumbnail-main-text-color)] m-0 scale-y-[-1] mt-16 opacity-30">{{ configStore.titleText }}</h1>
       </div>
       <div id="text-only-footer" class="absolute bottom-[30px] left-1/2 transform -translate-x-1/2">
-        <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" class="h-8 object-contain" />
+        <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
         <span v-else class="text-2xl text-[var(--thumbnail-secondary-text-color)]">{{ configStore.handleText }}</span>
       </div>
     </div>
