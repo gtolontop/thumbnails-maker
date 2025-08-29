@@ -10,7 +10,7 @@ export const configStore = reactive({
   handleLogo: '',
   useHandleLogo: true,
   backgroundImage: '',
-  handleLogoSize: 32
+  handleLogoSize: 55
 })
 
 export function useConfigStore() {
