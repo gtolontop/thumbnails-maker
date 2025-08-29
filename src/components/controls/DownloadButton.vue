@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import html2canvas from 'html2canvas'
+import domtoimage from 'dom-to-image-more'
 
 const isDownloading = ref(false)
 
@@ -21,70 +21,53 @@ async function downloadThumbnail() {
   isDownloading.value = true
   
   try {
-    console.log('Starting download...')
+    const thumbnail = document.getElementById('thumbnail') as HTMLElement
+    if (!thumbnail) {
+      throw new Error('Thumbnail element not found')
+    }
     
+    // Hide controls during capture
     const controls = document.querySelector('.controls') as HTMLElement
     if (controls) {
       controls.style.display = 'none'
     }
     
-    const thumbnail = document.getElementById('thumbnail') as HTMLElement
-    if (!thumbnail) {
-      throw new Error('Thumbnail element not found')
-    }
-    console.log('Thumbnail element found:', thumbnail)
-    
-    console.log('html2canvas loaded:', html2canvas)
-    
-    // Force computed styles to be applied
+    // Wait a bit for any transitions
     await new Promise(resolve => setTimeout(resolve, 100))
     
-    const canvas = await html2canvas(thumbnail, {
-      allowTaint: true,
-      useCORS: true,
-      scale: 2, // Higher quality
-      backgroundColor: getComputedStyle(thumbnail).backgroundColor || '#000',
-      logging: true,
-      removeContainer: false,
-      imageTimeout: 0,
-      onclone: (clonedDoc) => {
-        const clonedThumbnail = clonedDoc.getElementById('thumbnail')
-        if (clonedThumbnail) {
-          // Force all styles to be computed
-          const allElements = clonedThumbnail.querySelectorAll('*')
-          allElements.forEach((el: Element) => {
-            const htmlEl = el as HTMLElement
-            const computedStyle = window.getComputedStyle(el)
-            
-            // Apply critical styles inline
-            htmlEl.style.color = computedStyle.color
-            htmlEl.style.fontSize = computedStyle.fontSize
-            htmlEl.style.fontWeight = computedStyle.fontWeight
-            htmlEl.style.letterSpacing = computedStyle.letterSpacing
-            htmlEl.style.textTransform = computedStyle.textTransform
-            htmlEl.style.opacity = computedStyle.opacity
-            
-            // Handle background gradients
-            if (computedStyle.backgroundImage && computedStyle.backgroundImage !== 'none') {
-              htmlEl.style.backgroundImage = computedStyle.backgroundImage
-              htmlEl.style.webkitBackgroundClip = computedStyle.webkitBackgroundClip || ''
-              htmlEl.style.webkitTextFillColor = computedStyle.webkitTextFillColor || ''
-            }
-          })
-        }
+    // Create high quality image
+    const dataUrl = await domtoimage.toPng(thumbnail, {
+      width: 1600,
+      height: 800,
+      quality: 1.0,
+      bgcolor: '#10131C',
+      style: {
+        // Force some styles that might not be captured
+        'font-rendering': 'optimizeLegibility',
+        '-webkit-font-smoothing': 'antialiased'
+      },
+      filter: (node: Element) => {
+        // Don't include control elements if any
+        return !node.classList?.contains('controls')
       }
     })
     
+    // Download the image
     const link = document.createElement('a')
-    link.download = 'thumbnail.png'
-    link.href = canvas.toDataURL('image/png')
+    link.download = `thumbnail_${Date.now()}.png`
+    link.href = dataUrl
     link.click()
     
+    // Restore controls
     if (controls) {
       controls.style.display = 'grid'
     }
+    
   } catch (error) {
     console.error('Download failed:', error)
+    alert('Failed to download thumbnail. Please try again.')
+    
+    // Restore controls even on error
     const controls = document.querySelector('.controls') as HTMLElement
     if (controls) {
       controls.style.display = 'grid'
