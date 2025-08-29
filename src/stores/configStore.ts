@@ -3,10 +3,9 @@ import { reactive } from 'vue'
 export const configStore = reactive({
   handleText: '@rk.dev',
   titleText: 'Input Data',
-  rightHeaderText: 'Input Data',
+  rightHeaderText: 'NOW AVAILABLE ON',
   footerText: 'Input Data',
   imageUrl: '',
-  headerText: 'NOW AVAILABLE ON',
   headerLinkText: 'fivelink.lol',
   showHeader: true,
   handleLogo: '',
