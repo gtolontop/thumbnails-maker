@@ -45,9 +45,9 @@
       </div>
     </div>
     
-    <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full flex flex-col justify-center items-center py-[80px] relative">
-      <div class="absolute top-[80px] left-1/2 transform -translate-x-1/2">
-        <div id="text-only-header" class="flex items-center justify-center gap-3 mb-8">
+    <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full flex flex-col justify-center items-center">
+      <div class="flex flex-col items-center gap-12">
+        <div id="text-only-header" class="flex items-center justify-center gap-3">
           <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
             <div class="px-7 py-2 rounded-lg" style="background-color: #3a3f4d;">
@@ -71,11 +71,11 @@
             </div>
           </div>
         </div>
-      </div>
-      
-      <div id="text-only-footer" class="absolute bottom-[80px] left-1/2 transform -translate-x-1/2">
-        <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
-        <span v-else class="text-2xl text-[var(--thumbnail-secondary-text-color)]">{{ configStore.handleText }}</span>
+        
+        <div v-if="configStore.useHandleLogo && configStore.handleLogo || configStore.handleText" id="text-only-footer">
+          <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
+          <span v-else class="text-2xl text-[var(--thumbnail-secondary-text-color)]">{{ configStore.handleText }}</span>
+        </div>
       </div>
     </div>
     
