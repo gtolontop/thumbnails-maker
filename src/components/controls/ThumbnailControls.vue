@@ -151,16 +151,6 @@
       @theme-change="updateTheme"
     />
     <div class="control-group flex flex-col">
-      <label for="show-header-toggle" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">Show Header</label>
-      <input 
-        type="checkbox" 
-        id="show-header-toggle" 
-        :checked="configStore.showHeader"
-        @change="updateShowHeader"
-        class="appearance-none relative w-6 h-6 bg-[var(--input-bg-color)] border border-[var(--input-border-color)] rounded-md cursor-pointer mt-2 inline-block align-middle checked:bg-[var(--button-primary-bg-color)] checked:border-[var(--button-primary-bg-color)] checked:after:content-[''] checked:after:absolute checked:after:top-1 checked:after:left-2 checked:after:w-[5px] checked:after:h-[10px] checked:after:border-solid checked:after:border-[var(--input-text-color)_0_3px_3px_0] checked:after:rotate-45"
-      >
-    </div>
-    <div class="control-group flex flex-col">
       <label for="grid-toggle" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">Show Grid</label>
       <input 
         type="checkbox" 
