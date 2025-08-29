@@ -9,7 +9,7 @@
     />
     <label
       :for="id"
-      class="cursor-pointer w-full p-2 rounded-md border border-dashed border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope'] text-center hover:bg-opacity-80 transition-all"
+      class="cursor-pointer w-full p-2 rounded-md border border-dashed border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope'] text-center hover:bg-opacity-80 transition-all block"
     >
       <i class="fas fa-cloud-upload-alt mr-2"></i>
       {{ label || 'Choose file' }}
