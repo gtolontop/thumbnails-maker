@@ -42,8 +42,7 @@
           </div>
         </div>
         <div>
-          <h1 id="text-only-title" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-          <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -0.2em;">{{ configStore.titleText }}</h1>
+          <h1 id="text-only-title" class="reflect text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]" :data-text="configStore.titleText">{{ configStore.titleText }}</h1>
         </div>
       </div>
       <div id="text-only-footer" class="absolute bottom-[30px] left-1/2 transform -translate-x-1/2">
