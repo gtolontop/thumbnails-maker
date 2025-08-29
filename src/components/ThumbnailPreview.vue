@@ -48,10 +48,10 @@
     <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full flex flex-col justify-center items-center">
       <div class="flex flex-col items-center" :style="configStore.useHandleLogo && configStore.handleLogo ? 'gap: 60px' : 'gap: 48px'">
         <div id="text-only-header" class="flex items-center justify-center gap-3">
-          <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
+          <span class="text-white text-[28px] font-bold tracking-[0.2em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
             <div class="px-6 py-1 rounded-lg" style="background-color: #3a3f4d;">
-              <span class="text-gray-400 text-[28px] font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
+              <span class="text-gray-400 text-[28px] font-bold tracking-[0.18em] uppercase">{{ configStore.headerLinkText }}</span>
             </div>
           </div>
         </div>
