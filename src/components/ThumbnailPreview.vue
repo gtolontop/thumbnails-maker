@@ -46,7 +46,7 @@
     </div>
     
     <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full flex flex-col justify-center items-center">
-      <div class="flex flex-col items-center" :style="configStore.useHandleLogo && configStore.handleLogo ? 'gap: 20px' : 'gap: 48px'">
+      <div class="flex flex-col items-center" :style="configStore.useHandleLogo && configStore.handleLogo ? 'gap: 60px' : 'gap: 48px'">
         <div id="text-only-header" class="flex items-center justify-center gap-3">
           <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
