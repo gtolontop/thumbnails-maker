@@ -29,6 +29,24 @@
           />
           Use logo instead of text
         </label>
+        <div v-if="configStore.useHandleLogo && configStore.handleLogo" class="mt-2 space-y-2">
+          <div class="flex items-center justify-between">
+            <label class="text-xs text-[var(--thumbnail-secondary-text-color)]">Logo size: {{ configStore.handleLogoSize }}px</label>
+            <button
+              @click="removeHandleLogo"
+              class="text-red-500 hover:text-red-600 text-xs"
+            >
+              <i class="fas fa-times mr-1"></i>Remove
+            </button>
+          </div>
+          <input
+            type="range"
+            min="16"
+            max="80"
+            v-model.number="configStore.handleLogoSize"
+            class="w-full h-2 bg-[var(--input-bg-color)] rounded-lg appearance-none cursor-pointer accent-[var(--button-primary-bg-color)]"
+          />
+        </div>
       </div>
     </div>
 
