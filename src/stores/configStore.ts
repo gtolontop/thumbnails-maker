@@ -5,7 +5,10 @@ export const configStore = reactive({
   titleText: 'Input Data',
   rightHeaderText: 'Input Data',
   footerText: 'Input Data',
-  imageUrl: ''
+  imageUrl: '',
+  headerText: 'NOW AVAILABLE ON',
+  headerLinkText: 'fivelink.lol',
+  showHeader: true
 })
 
 export function useConfigStore() {

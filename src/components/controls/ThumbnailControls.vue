@@ -69,12 +69,50 @@
         placeholder="Enter image URL"
       />
     </div>
+
+    <div class="control-group flex flex-col">
+      <label for="header-text" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
+        <i class="fas fa-bullhorn mr-2"></i>Header Text
+      </label>
+      <input
+        id="header-text"
+        type="text"
+        :value="configStore.headerText"
+        @input="updateHeaderText"
+        class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
+        placeholder="Enter header text"
+      />
+    </div>
+
+    <div class="control-group flex flex-col">
+      <label for="header-link-text" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
+        <i class="fas fa-link mr-2"></i>Header Link
+      </label>
+      <input
+        id="header-link-text"
+        type="text"
+        :value="configStore.headerLinkText"
+        @input="updateHeaderLinkText"
+        class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
+        placeholder="Enter link text"
+      />
+    </div>
     <ColorScheme
       :selected-theme="selectedTheme"
       :themes="themes"
       @update:selected-theme="updateSelectedTheme"
       @theme-change="updateTheme"
     />
+    <div class="control-group flex flex-col">
+      <label for="show-header-toggle" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">Show Header</label>
+      <input 
+        type="checkbox" 
+        id="show-header-toggle" 
+        :checked="configStore.showHeader"
+        @change="updateShowHeader"
+        class="appearance-none relative w-6 h-6 bg-[var(--input-bg-color)] border border-[var(--input-border-color)] rounded-md cursor-pointer mt-2 inline-block align-middle checked:bg-[var(--button-primary-bg-color)] checked:border-[var(--button-primary-bg-color)] checked:after:content-[''] checked:after:absolute checked:after:top-1 checked:after:left-2 checked:after:w-[5px] checked:after:h-[10px] checked:after:border-solid checked:after:border-[var(--input-text-color)_0_3px_3px_0] checked:after:rotate-45"
+      >
+    </div>
     <div class="control-group flex flex-col">
       <label for="grid-toggle" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">Show Grid</label>
       <input 
@@ -152,6 +190,16 @@ function updateFooterText(event: Event) {
 function updateImageUrl(event: Event) {
   const target = event.target as HTMLInputElement
   configStore.imageUrl = target.value
+}
+
+function updateHeaderText(event: Event) {
+  const target = event.target as HTMLInputElement
+  configStore.headerText = target.value
+}
+
+function updateHeaderLinkText(event: Event) {
+  const target = event.target as HTMLInputElement
+  configStore.headerLinkText = target.value
 }
 
 function updateSelectedTheme(themeKey: string) {

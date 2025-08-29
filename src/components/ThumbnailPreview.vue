@@ -5,6 +5,13 @@
     class="w-[1600px] h-[800px] bg-[var(--thumbnail-bg-color)] relative overflow-hidden p-[60px_80px] box-border transition-colors duration-300"
     :style="backgroundStyle"
   >
+    <!-- Header with NOW AVAILABLE ON text and link -->
+    <div v-if="configStore.showHeader" class="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
+      <span class="text-white text-sm font-medium uppercase tracking-wider">{{ configStore.headerText }}</span>
+      <div class="px-4 py-1.5 border border-gray-400 rounded-md bg-transparent">
+        <span class="text-gray-100 text-sm font-medium">{{ configStore.headerLinkText }}</span>
+      </div>
+    </div>
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
       <div class="left-panel flex flex-col justify-center h-full w-1/2 relative -left-10">
         <div class="handle text-[var(--thumbnail-secondary-text-color)] text-2xl mb-4">{{ configStore.handleText }}</div>
