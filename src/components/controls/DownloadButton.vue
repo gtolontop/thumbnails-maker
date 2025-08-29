@@ -36,13 +36,43 @@ async function downloadThumbnail() {
     
     console.log('html2canvas loaded:', html2canvas)
     
+    // Force computed styles to be applied
+    await new Promise(resolve => setTimeout(resolve, 100))
+    
     const canvas = await html2canvas(thumbnail, {
       allowTaint: true,
       useCORS: true,
-      scale: 1,
-      backgroundColor: null,
-      logging: false,
-      removeContainer: true
+      scale: 2, // Higher quality
+      backgroundColor: getComputedStyle(thumbnail).backgroundColor || '#000',
+      logging: true,
+      removeContainer: false,
+      imageTimeout: 0,
+      onclone: (clonedDoc) => {
+        const clonedThumbnail = clonedDoc.getElementById('thumbnail')
+        if (clonedThumbnail) {
+          // Force all styles to be computed
+          const allElements = clonedThumbnail.querySelectorAll('*')
+          allElements.forEach((el: Element) => {
+            const htmlEl = el as HTMLElement
+            const computedStyle = window.getComputedStyle(el)
+            
+            // Apply critical styles inline
+            htmlEl.style.color = computedStyle.color
+            htmlEl.style.fontSize = computedStyle.fontSize
+            htmlEl.style.fontWeight = computedStyle.fontWeight
+            htmlEl.style.letterSpacing = computedStyle.letterSpacing
+            htmlEl.style.textTransform = computedStyle.textTransform
+            htmlEl.style.opacity = computedStyle.opacity
+            
+            // Handle background gradients
+            if (computedStyle.backgroundImage && computedStyle.backgroundImage !== 'none') {
+              htmlEl.style.backgroundImage = computedStyle.backgroundImage
+              htmlEl.style.webkitBackgroundClip = computedStyle.webkitBackgroundClip || ''
+              htmlEl.style.webkitTextFillColor = computedStyle.webkitTextFillColor || ''
+            }
+          })
+        }
+      }
     })
     
     const link = document.createElement('a')
