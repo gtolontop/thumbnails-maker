@@ -4,7 +4,7 @@ import { themes, defaultTheme } from './savedThemes'
 export function useThumbnailStore() {
   const selectedTheme = ref(defaultTheme)
   const showGrid = ref(true)
-  const isTextOnly = ref(false)
+  const isTextOnly = ref(true)
 
   const backgroundStyle = computed(() => {
     const gradientStyle = 'radial-gradient(circle at center, rgba(255, 255, 255, 0.05) 0%, transparent 70%)'
