@@ -7,9 +7,8 @@ export const configStore = reactive({
   footerText: 'Input Data',
   imageUrl: '',
   headerLinkText: 'fivelink.lol',
-  showHeader: true,
   handleLogo: '',
-  useHandleLogo: false,
+  useHandleLogo: true,
   backgroundImage: '',
   handleLogoSize: 32
 })
