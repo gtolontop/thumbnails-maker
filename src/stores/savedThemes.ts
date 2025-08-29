@@ -30,7 +30,7 @@ export const themes: Record<string, Theme> = {
       "--input-text-color": "#ffffff",
       "--button-primary-bg-color": "#3b3e52",
       "--button-primary-hover-bg-color": "#4c4f69",
-      "--thumbnail-bg-color": "#1a1e2a",
+      "--thumbnail-bg-color": "#10131C",
       "--thumbnail-grid-color": "rgba(255, 255, 255, 0.05)",
       "--thumbnail-main-text-color": "#ffffff",
       "--thumbnail-secondary-text-color": "#a9b1d6",
