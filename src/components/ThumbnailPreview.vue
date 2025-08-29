@@ -25,10 +25,12 @@
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
-        <div class="right-panel-header flex items-center gap-3 mb-6 justify-center">
-          <span class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px]">{{ configStore.rightHeaderText }}</span>
-          <div v-if="configStore.headerLinkText" class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
-            <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
+        <div class="right-panel-header mb-6 flex items-center justify-center gap-6">
+          <span class="text-white text-2xl font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
+          <div v-if="configStore.headerLinkText" class="inline-block">
+            <div class="px-7 py-3 rounded-lg" style="background-color: #3a3f4d;">
+              <span class="text-gray-400 text-2xl font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
+            </div>
           </div>
         </div>
         <div class="ui-card w-[95%] flex-grow bg-transparent border-none rounded-2xl flex justify-center items-center box-border overflow-hidden">
@@ -44,10 +46,12 @@
     
     <div v-if="isTextOnly" id="text-only-layout" class="w-full h-full relative">
       <div id="text-only-main-content" class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-[45%] w-full text-center">
-        <div id="text-only-header" class="flex items-center gap-3 mb-4 justify-center">
-          <span class="text-[28px] font-bold tracking-[2px] text-[var(--thumbnail-secondary-text-color)]">{{ configStore.rightHeaderText }}</span>
-          <div v-if="configStore.headerLinkText" class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
-            <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
+        <div id="text-only-header" class="mb-6 flex items-center justify-center gap-7">
+          <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
+          <div v-if="configStore.headerLinkText" class="inline-block">
+            <div class="px-8 py-3 rounded-lg" style="background-color: #3a3f4d;">
+              <span class="text-gray-400 text-[28px] font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
+            </div>
           </div>
         </div>
         <div class="relative inline-block">
