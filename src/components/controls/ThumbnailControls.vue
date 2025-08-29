@@ -1,17 +1,35 @@
 <template>
   <div class="controls grid grid-cols-4 gap-4 bg-[var(--controls-bg-color)] p-6 rounded-xl w-[1600px] box-border transition-colors duration-300">
     <div class="control-group flex flex-col">
-      <label for="handle-text" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
-        <i class="fas fa-at mr-2"></i>Handle Text
+      <label class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
+        <i class="fas fa-at mr-2"></i>Handle (Text/Logo)
       </label>
-      <input
-        id="handle-text"
-        type="text"
-        :value="configStore.handleText"
-        @input="updateHandleText"
-        class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
-        placeholder="Enter handle text"
-      />
+      <div class="space-y-2">
+        <input
+          v-if="!configStore.useHandleLogo"
+          id="handle-text"
+          type="text"
+          :value="configStore.handleText"
+          @input="updateHandleText"
+          class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
+          placeholder="Enter handle text"
+        />
+        <FileUpload
+          v-if="configStore.useHandleLogo"
+          id="handle-logo"
+          label="Upload logo"
+          accept="image/*"
+          @fileSelected="updateHandleLogo"
+        />
+        <label class="flex items-center gap-2 text-xs">
+          <input
+            type="checkbox"
+            v-model="configStore.useHandleLogo"
+            class="appearance-none relative w-4 h-4 bg-[var(--input-bg-color)] border border-[var(--input-border-color)] rounded cursor-pointer checked:bg-[var(--button-primary-bg-color)] checked:border-[var(--button-primary-bg-color)] checked:after:content-[''] checked:after:absolute checked:after:top-0.5 checked:after:left-1.5 checked:after:w-[3px] checked:after:h-[7px] checked:after:border-solid checked:after:border-[var(--input-text-color)_0_2px_2px_0] checked:after:rotate-45"
+          />
+          Use logo instead of text
+        </label>
+      </div>
     </div>
 
     <div class="control-group flex flex-col">
@@ -57,16 +75,26 @@
     </div>
 
     <div class="control-group flex flex-col">
-      <label for="image-url" class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
-        <i class="fas fa-image mr-2"></i>Image URL
+      <label class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
+        <i class="fas fa-image mr-2"></i>Image
       </label>
-      <input
-        id="image-url"
-        type="text"
-        :value="configStore.imageUrl"
-        @input="updateImageUrl"
-        class="w-full p-2 rounded-md border border-[var(--input-border-color)] bg-[var(--input-bg-color)] text-[var(--input-text-color)] font-['Manrope']"
-        placeholder="Enter image URL"
+      <FileUpload
+        id="main-image"
+        label="Upload image"
+        accept="image/*"
+        @fileSelected="updateMainImage"
+      />
+    </div>
+
+    <div class="control-group flex flex-col">
+      <label class="mb-2 text-sm text-[var(--thumbnail-secondary-text-color)]">
+        <i class="fas fa-image mr-2"></i>Background Image
+      </label>
+      <FileUpload
+        id="background-image"
+        label="Upload background"
+        accept="image/*"
+        @fileSelected="updateBackgroundImage"
       />
     </div>
 
@@ -130,6 +158,7 @@
 <script setup lang="ts">
 import DownloadButton from './DownloadButton.vue'
 import ColorScheme from './ColorScheme.vue'
+import FileUpload from './FileUpload.vue'
 import type { Theme } from '../../stores/savedThemes'
 import { useConfigStore } from '../../stores/configStore'
 
@@ -177,11 +206,6 @@ function updateFooterText(event: Event) {
 function updateImageUrl(event: Event) {
   const target = event.target as HTMLInputElement
   configStore.imageUrl = target.value
-}
-
-function updateHeaderText(event: Event) {
-  const target = event.target as HTMLInputElement
-  configStore.headerText = target.value
 }
 
 function updateHeaderLinkText(event: Event) {
