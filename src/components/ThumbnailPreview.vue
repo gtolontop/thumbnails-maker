@@ -8,7 +8,7 @@
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
       <div class="left-panel flex flex-col justify-center h-full w-1/2 relative -left-10">
         <div class="handle mb-4">
-          <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" class="h-8 object-contain" />
+          <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
           <span v-else class="text-[var(--thumbnail-secondary-text-color)] text-2xl">{{ configStore.handleText }}</span>
         </div>
         <div class="title-container">
