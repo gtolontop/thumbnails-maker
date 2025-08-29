@@ -86,3 +86,32 @@ const computedBackgroundStyle = computed(() => {
   return baseStyle
 })
 </script>
+
+<style scoped>
+.reflect {
+  position: relative;
+  display: inline-block;
+}
+
+.reflect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: var(--thumbnail-main-text-color);
+  transform: scaleY(-1);
+  opacity: 0.3;
+  background: linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0.3) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+</style>
