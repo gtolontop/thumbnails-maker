@@ -58,9 +58,9 @@
         
         <div id="text-only-main-content" class="flex items-center justify-center" :style="configStore.useHandleLogo && configStore.handleLogo ? 'margin-bottom: 100px' : ''">
           <div class="relative inline-block">
-            <h1 id="text-only-title" class="text-[130px] font-extrabold leading-[1] m-0 whitespace-nowrap" style="color: #9EA4BE;">{{ configStore.titleText }}</h1>
-            <div class="absolute left-0 w-full overflow-hidden" style="top: calc(100% - 32px); height: 130px;">
-              <h1 class="text-[130px] font-extrabold leading-[1] m-0 whitespace-nowrap transform scale-y-[-1] opacity-30" 
+            <h1 id="text-only-title" class="text-[140px] font-extrabold leading-[1] m-0 whitespace-nowrap" style="color: #9EA4BE;">{{ configStore.titleText }}</h1>
+            <div class="absolute left-0 w-full overflow-hidden" style="top: calc(100% - 35px); height: 140px;">
+              <h1 class="text-[140px] font-extrabold leading-[1] m-0 whitespace-nowrap transform scale-y-[-1] opacity-30" 
                   style="color: #9EA4BE;
                          background: linear-gradient(to bottom, transparent 20%, #9EA4BE 100%); 
                          -webkit-background-clip: text; 
