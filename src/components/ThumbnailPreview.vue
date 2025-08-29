@@ -5,6 +5,11 @@
     class="w-[1600px] h-[800px] bg-[var(--thumbnail-bg-color)] relative overflow-hidden p-[60px_80px] box-border transition-colors duration-300"
     :style="computedBackgroundStyle"
   >
+    <!-- Glow ellipse at the top -->
+    <div 
+      class="absolute -top-[50px] left-1/2 transform -translate-x-1/2 w-[800px] h-[200px] pointer-events-none z-[1]"
+      style="background: radial-gradient(ellipse at center, rgba(207, 250, 254, 0.15) 0%, rgba(207, 250, 254, 0.08) 30%, rgba(207, 250, 254, 0.03) 60%, transparent 100%); filter: blur(40px);"
+    ></div>
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
       <div class="left-panel flex flex-col justify-center h-full w-1/2 relative -left-10">
         <div class="handle mb-4">
