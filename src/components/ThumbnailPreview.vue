@@ -28,7 +28,7 @@
         <div class="right-panel-header mb-6 flex items-center justify-center gap-6">
           <span class="text-white text-2xl font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
-            <div class="px-7 py-3 rounded-lg" style="background-color: #3a3f4d;">
+            <div class="px-6 py-2 rounded-lg" style="background-color: #3a3f4d;">
               <span class="text-gray-400 text-2xl font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
             </div>
           </div>
@@ -49,7 +49,7 @@
         <div id="text-only-header" class="mb-6 flex items-center justify-center gap-7">
           <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
-            <div class="px-8 py-3 rounded-lg" style="background-color: #3a3f4d;">
+            <div class="px-7 py-2 rounded-lg" style="background-color: #3a3f4d;">
               <span class="text-gray-400 text-[28px] font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
             </div>
           </div>
