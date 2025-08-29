@@ -1,7 +1,7 @@
 import { reactive } from 'vue'
 
 export const configStore = reactive({
-  handleText: '@rk.dev',
+  handleText: '',
   titleText: 'Input Data',
   rightHeaderText: 'NOW AVAILABLE ON',
   footerText: 'Input Data',
