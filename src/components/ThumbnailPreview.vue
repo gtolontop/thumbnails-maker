@@ -7,8 +7,8 @@
   >
     <!-- Glow ellipse at the top -->
     <div 
-      class="absolute -top-[50px] left-1/2 transform -translate-x-1/2 w-[800px] h-[200px] pointer-events-none z-[1]"
-      style="background: radial-gradient(ellipse at center, rgba(91, 106, 218, 0.08) 0%, rgba(91, 106, 218, 0.05) 25%, rgba(91, 106, 218, 0.02) 50%, transparent 75%); filter: blur(40px);"
+      class="absolute -top-[100px] left-1/2 transform -translate-x-1/2 w-[800px] h-[200px] pointer-events-none z-[1]"
+      style="background: radial-gradient(ellipse at center, rgba(15, 19, 49, 0.08) 0%, rgba(74, 82, 153, 0.23) 25%, rgba(78, 91, 194, 0.14) 50%, transparent 75%); filter: blur(60px);"
     ></div>
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
       <div class="left-panel flex flex-col justify-center h-full w-1/2 relative -left-10">
