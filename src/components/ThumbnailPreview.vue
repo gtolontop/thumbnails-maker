@@ -6,10 +6,10 @@
     :style="computedBackgroundStyle"
   >
     <!-- Header with NOW AVAILABLE ON text and link -->
-    <div v-if="configStore.showHeader" class="absolute top-6 left-1/2 transform -translate-x-1/2 flex items-center gap-3">
-      <span class="text-white text-sm font-medium uppercase tracking-wider">{{ configStore.headerText }}</span>
-      <div class="px-4 py-1.5 border border-gray-400 rounded-md bg-transparent">
-        <span class="text-gray-100 text-sm font-medium">{{ configStore.headerLinkText }}</span>
+    <div v-if="configStore.showHeader" class="absolute top-[30px] left-1/2 transform -translate-x-1/2 flex items-center gap-3">
+      <span class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px] uppercase">{{ configStore.rightHeaderText }}</span>
+      <div class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
+        <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
       </div>
     </div>
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
