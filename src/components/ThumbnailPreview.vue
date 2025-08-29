@@ -5,13 +5,6 @@
     class="w-[1600px] h-[800px] bg-[var(--thumbnail-bg-color)] relative overflow-hidden p-[60px_80px] box-border transition-colors duration-300"
     :style="computedBackgroundStyle"
   >
-    <!-- Header with NOW AVAILABLE ON text and link -->
-    <div v-if="configStore.showHeader" class="absolute top-[30px] left-1/2 transform -translate-x-1/2 flex items-center gap-3">
-      <span class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px] uppercase">{{ configStore.rightHeaderText }}</span>
-      <div class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
-        <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
-      </div>
-    </div>
     <div v-if="!isTextOnly" id="default-layout" class="flex justify-between items-center w-full h-full">
       <div class="left-panel flex flex-col justify-center h-full w-1/2 relative -left-10">
         <div class="handle mb-4">
@@ -24,7 +17,12 @@
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
-        <div class="right-panel-header text-[var(--thumbnail-secondary-text-color)] text-xl font-bold mb-6 tracking-[2px] text-center">{{ configStore.rightHeaderText }}</div>
+        <div class="right-panel-header flex flex-col items-center gap-3 mb-6">
+          <div class="text-[var(--thumbnail-secondary-text-color)] text-xl font-bold tracking-[2px] text-center">{{ configStore.rightHeaderText }}</div>
+          <div v-if="configStore.showHeader && configStore.headerLinkText" class="px-5 py-2 border border-gray-500 rounded-lg bg-transparent">
+            <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
+          </div>
+        </div>
         <div class="ui-card w-[95%] flex-grow bg-transparent border-none rounded-2xl flex justify-center items-center box-border overflow-hidden">
           <img 
             v-if="configStore.imageUrl && !isTextOnly" 
