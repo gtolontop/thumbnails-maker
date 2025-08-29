@@ -12,8 +12,7 @@
           <span v-else class="text-[var(--thumbnail-secondary-text-color)] text-2xl">{{ configStore.handleText }}</span>
         </div>
         <div class="title-container">
-          <h1 class="title text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-          <h1 class="reflection text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -0.2em;">{{ configStore.titleText }}</h1>
+          <h1 class="title reflect text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]" :data-text="configStore.titleText">{{ configStore.titleText }}</h1>
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
