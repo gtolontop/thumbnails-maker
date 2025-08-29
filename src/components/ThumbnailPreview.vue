@@ -13,7 +13,7 @@
         </div>
         <div class="title-container">
           <h1 class="title text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-          <h1 class="reflection text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -1em;">{{ configStore.titleText }}</h1>
+          <h1 class="reflection text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -0.2em;">{{ configStore.titleText }}</h1>
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
@@ -44,7 +44,7 @@
         </div>
         <div>
           <h1 id="text-only-title" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
-          <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -1em;">{{ configStore.titleText }}</h1>
+          <h1 id="text-only-reflection" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] scale-y-[-1] opacity-30" style="margin-top: -0.2em;">{{ configStore.titleText }}</h1>
         </div>
       </div>
       <div id="text-only-footer" class="absolute bottom-[30px] left-1/2 transform -translate-x-1/2">
