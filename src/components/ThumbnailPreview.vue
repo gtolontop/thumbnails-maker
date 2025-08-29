@@ -50,7 +50,7 @@
         <div id="text-only-header" class="flex items-center justify-center gap-3">
           <span class="text-white text-[28px] font-medium tracking-[0.15em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
-            <div class="px-7 py-1 rounded-lg" style="background-color: #3a3f4d;">
+            <div class="px-6 py-1 rounded-lg" style="background-color: #3a3f4d;">
               <span class="text-gray-400 text-[28px] font-semibold tracking-[0.12em] uppercase">{{ configStore.headerLinkText }}</span>
             </div>
           </div>
