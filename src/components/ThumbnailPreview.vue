@@ -51,7 +51,7 @@
           <span class="text-white text-[32px] font-bold tracking-[0.25em] uppercase">{{ configStore.rightHeaderText }}</span>
           <div v-if="configStore.headerLinkText" class="inline-block">
             <div class="px-6 py-1 rounded-lg" style="background-color: #333645;">
-              <span class="text-gray-400 text-[32px] font-bold tracking-[0.22em] uppercase">{{ configStore.headerLinkText }}</span>
+              <span class="text-[32px] font-bold tracking-[0.22em] uppercase" style="color: #9DA3BB;">{{ configStore.headerLinkText }}</span>
             </div>
           </div>
         </div>
