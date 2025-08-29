@@ -8,7 +8,10 @@ export const configStore = reactive({
   imageUrl: '',
   headerText: 'NOW AVAILABLE ON',
   headerLinkText: 'fivelink.lol',
-  showHeader: true
+  showHeader: true,
+  handleLogo: '',
+  useHandleLogo: false,
+  backgroundImage: ''
 })
 
 export function useConfigStore() {
