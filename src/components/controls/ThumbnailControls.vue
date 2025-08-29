@@ -203,10 +203,6 @@ function updateFooterText(event: Event) {
   configStore.footerText = target.value
 }
 
-function updateImageUrl(event: Event) {
-  const target = event.target as HTMLInputElement
-  configStore.imageUrl = target.value
-}
 
 function updateHeaderLinkText(event: Event) {
   const target = event.target as HTMLInputElement
@@ -234,6 +230,18 @@ function updateShowGrid(event: Event) {
 function updateIsTextOnly(event: Event) {
   const target = event.target as HTMLInputElement
   emit('update:isTextOnly', target.checked)
+}
+
+function updateHandleLogo(dataUrl: string) {
+  configStore.handleLogo = dataUrl
+}
+
+function updateMainImage(dataUrl: string) {
+  configStore.imageUrl = dataUrl
+}
+
+function updateBackgroundImage(dataUrl: string) {
+  configStore.backgroundImage = dataUrl
 }
 </script>
 
