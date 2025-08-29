@@ -11,8 +11,17 @@
           <img v-if="configStore.useHandleLogo && configStore.handleLogo" :src="configStore.handleLogo" alt="Handle Logo" :style="`height: ${configStore.handleLogoSize}px`" class="object-contain" />
           <span v-else class="text-[var(--thumbnail-secondary-text-color)] text-2xl">{{ configStore.handleText }}</span>
         </div>
-        <div class="title-container">
-          <h1 class="title reflect text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]" :data-text="configStore.titleText">{{ configStore.titleText }}</h1>
+        <div class="title-container relative">
+          <h1 class="title text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
+          <div class="reflect-wrapper absolute left-0 w-full overflow-hidden" style="top: calc(100% - 15px); height: 60px;">
+            <h1 class="text-[60px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] transform scale-y-[-1] opacity-30" 
+                style="background: linear-gradient(to bottom, transparent 20%, var(--thumbnail-main-text-color) 100%); 
+                       -webkit-background-clip: text; 
+                       -webkit-text-fill-color: transparent;
+                       background-clip: text;">
+              {{ configStore.titleText }}
+            </h1>
+          </div>
         </div>
       </div>
       <div class="right-panel flex flex-col items-center justify-start h-full w-1/2 relative -right-10">
@@ -41,8 +50,17 @@
             <span class="text-gray-200 text-lg font-medium">{{ configStore.headerLinkText }}</span>
           </div>
         </div>
-        <div>
-          <h1 id="text-only-title" class="reflect text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]" :data-text="configStore.titleText">{{ configStore.titleText }}</h1>
+        <div class="relative inline-block">
+          <h1 id="text-only-title" class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)]">{{ configStore.titleText }}</h1>
+          <div class="absolute left-0 w-full overflow-hidden" style="top: calc(100% - 18px); height: 73px;">
+            <h1 class="text-[73px] font-extrabold leading-[1] m-0 text-[var(--thumbnail-main-text-color)] transform scale-y-[-1] opacity-30" 
+                style="background: linear-gradient(to bottom, transparent 20%, var(--thumbnail-main-text-color) 100%); 
+                       -webkit-background-clip: text; 
+                       -webkit-text-fill-color: transparent;
+                       background-clip: text;">
+              {{ configStore.titleText }}
+            </h1>
+          </div>
         </div>
       </div>
       <div id="text-only-footer" class="absolute bottom-[30px] left-1/2 transform -translate-x-1/2">
@@ -87,31 +105,3 @@ const computedBackgroundStyle = computed(() => {
 })
 </script>
 
-<style scoped>
-.reflect {
-  position: relative;
-  display: inline-block;
-}
-
-.reflect::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  font-size: inherit;
-  font-weight: inherit;
-  line-height: inherit;
-  color: var(--thumbnail-main-text-color);
-  transform: scaleY(-1);
-  opacity: 0.3;
-  background: linear-gradient(to bottom, 
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-fill-color: transparent;
-}
-</style>
